@@ -11,13 +11,12 @@ const display = document.querySelector(".display");
 ///////////////////////////
 let memory = "";
 
-
 ///////////////////////////
 // give each btn an event listener
 ///////////////////////////
 btns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
-//  removes the leading zero when user starts pushing btns
+    //  removes the leading zero when user starts pushing btns
     if (display.innerText === "0") {
       display.innerText = "";
     }
@@ -37,20 +36,19 @@ let findNums;
 let findOps;
 console.log(findNums);
 
-
 ///////////////////////////
 // Calculate Function
 ///////////////////////////
 const calculateAnswer = () => {
-    // run our regex
+  // run our regex
   findNums = memory.match(regexNums);
   findOps = memory.match(regexOps);
 
-//   sets the type of our nums to number so we can calculate the total
+  //   sets the type of our nums to number so we can calculate the total
   findNums[0] = Number(findNums[0]);
   findNums[1] = Number(findNums[1]);
 
-// determines the type of operation run
+  // determines the type of operation run
   if (findOps[0] === "*") {
     display.innerText = findNums[0] * findNums[1];
   }
@@ -65,12 +63,10 @@ const calculateAnswer = () => {
   }
 };
 
-
 ///////////////////////////
 // calculate the answer
 ///////////////////////////
 equals.addEventListener("click", calculateAnswer);
-
 
 ///////////////////////////
 // reset the calculator
