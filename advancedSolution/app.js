@@ -114,7 +114,7 @@ function calculatorLogic(e) {
     display.innerText = tempOperator;
   }
 
-  //  * IF EQUALS
+  //   IF EQUALS
   if (e.target.classList.contains("equals")) {
     combinedArr.push(tempNum);
     console.log(combinedArr);
